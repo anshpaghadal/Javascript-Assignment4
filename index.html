@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Holidays</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="./JS/script.js" defer></script>
+
+</head>
+
+<body>
+    <div id="root">
+        <!-- heading -->
+        <h1>Holiday Details</h1>
+        <a href="https://date.nager.at/Api" target="_blank">
+            <button id="apiDocumentationButton">API Documentation</button>
+        </a>
+        <div id="studentInfo">
+        </div>
+        <div>
+            <!-- selection of country  -->
+            <select id="countrySelect">
+                <option value="">Select a Country</option>
+                <option value="Andorra">Andorra</option>
+                <option value="Albania">Albania</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Austria">Austria</option>
+                <option value="Australia">Australia</option>
+                <option value="Barbados">Barbados</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="Benin">Benin</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Bahamas">Bahamas</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Belarus">Belarus</option>
+                <option value="Belize">Belize</option>
+                <option value="Canada">Canada</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Cyprus">Cyprus</option>
+                <option value="Czechia">Czechia</option>
+                <option value="Germany">Germany</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Dominican Republic">Dominican Republic</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Estonia">Estonia</option>
+                <option value="Egypt">Egypt</option>
+                <option value="Spain">Spain</option>
+                <option value="Finland">Finland</option>
+                <option value="France">France</option>
+                <option value="Gabon">Gabon</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Grenada">Grenada</option>
+                <option value="Guernsey">Guernsey</option>
+                <option value="Gibraltar">Gibraltar</option>
+                <option value="Greenland">Greenland</option>
+                <option value="Gambia">Gambia</option>
+                <option value="Greece">Greece</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Guyana">Guyana</option>
+                <option value="Honduras">Honduras</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Haiti">Haiti</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Iceland">Iceland</option>
+                <option value="Italy">Italy</option>
+                <option value="Jersey">Jersey</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Japan">Japan</option>
+                <option value="South Korea">South Korea</option>
+                <option value="Liechtenstein">Liechtenstein</option>
+                <option value="Lesotho">Lesotho</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Luxembourg">Luxembourg</option>
+                <option value="Latvia">Latvia</option>
+                <option value="Morocco">Morocco</option>
+                <option value="Monaco">Monaco</option>
+                <option value="Moldova">Moldova</option>
+                <option value="Montenegro">Montenegro</option>
+                <option value="Madagascar">Madagascar</option>
+                <option value="North Macedonia">North Macedonia</option>
+                <option value="Mongolia">Mongolia</option>
+                <option value="Montserrat">Montserrat</option>
+                <option value="Malta">Malta</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Mozambique">Mozambique</option>
+                <option value="Namibia">Namibia</option>
+                <option value="Niger">Niger</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Norway">Norway</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Panama">Panama</option>
+                <option value="Peru">Peru</option>
+                <option value="Papua New Guinea">Papua New Guinea</option>
+                <option value="Poland">Poland</option>
+                <option value="Puerto Rico">Puerto Rico</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Romania">Romania</option>
+                <option value="Serbia">Serbia</option>
+                <option value="Russia">Russia</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Slovenia">Slovenia</option>
+                <option value="Slovakia">Slovakia</option>
+                <option value="San Marino">San Marino</option>
+                <option value="Suriname">Suriname</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Tunisia">Tunisia</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="United States">United States</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Vatican City">Vatican City</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Zimbabwe">Zimbabwe</option>
+            </select>
+            <!-- input for country  -->
+            <input type="text" id="searchTextField1" placeholder="Enter a year">
+            <button onclick="searchForCountries()" id="searchButton">Search</button>
+
+        </div>
+        <div id="resultsBox" style="display: none;">
+            <div id="selectedVBox" style="display: flex;">
+                <ul id="listView"></ul>
+                <img id="flagImage" alt="Country Flag">
+            </div>
+            <button id="detailsBtn" onclick="displayCountryDetails()">More Details &gt;&gt;</button>
+        </div>
+
+
+        <!-- this is table  -->
+        <table id="holidayDetailsTable" border="1" style="display: none;">
+            <h1 id="tableInfo"></h1>
+            <tr>
+                <th>Country Code</th>
+                <th>Date</th>
+                <th>Local Name</th>
+                <th>Name</th>
+            </tr>
+            <button onclick="resetForm()" id="resetButton" style="display: none;">Reset</button>
+        </table>
+    </div>
+</body>
+
+</html>

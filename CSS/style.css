@@ -1,0 +1,179 @@
+/* styling for body  */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  #root {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #007bff;
+}
+
+#studentInfo {
+    margin-bottom: 20px;
+}
+
+#countrySelect,
+#searchTextField1 {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+#searchButton, #apiDocumentationButton
+{
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: all 0.45s ease;
+}
+
+#searchButton:hover, #apiDocumentationButton:hover{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #007bff;
+    transform: scale(0.9);
+    border-radius: 2px;
+}
+
+input {
+    padding: 0.7em;
+    margin: 0.5em 0;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+input:focus {
+    outline: none;
+    border-color: #e74c3c;
+    background-color: #fff;
+}
+
+select {
+    padding: 0.6em;
+    margin: 0.5em 0;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select:focus {
+    outline: none;
+    border-color: #e74c3c;
+    background-color: #fff;
+}
+
+#resultsBox {
+    margin-top: 20px;
+}
+
+#listView {
+    list-style-type: none;
+    padding: 0;
+}
+
+#holidayDetailsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#holidayDetailsTable th,
+#holidayDetailsTable td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#resetButton {
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.45s ease;
+}
+
+#resetButton:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #dc3545;
+    transform: scale(0.9);
+    border-radius: 5px;
+}
+
+#holidayDetailsTable {
+    display: none;
+}
+
+#selectedVBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#flagImage {
+    height: 150px;
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#listView {
+    list-style-type: none;
+    margin: 5px;
+    padding: 0;
+    gap: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+#detailsBtn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: all 0.45s ease;
+}
+
+#detailsBtn:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #007bff;
+    transform: scale(0.9);
+    border-radius: 5px;
+}
